@@ -14,21 +14,21 @@ html {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: orangered;
+}
+
+.wz_container {
+    height:190px;
+    background-color:green;
+    padding-top:20px;
+    padding-left:15px;
+    padding-right:15px;
 }
 
 .wz_card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    width: 250px;
-    margin-top: 250px;
-    margin-left: 50px;
-}
-
-.wz_card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-.wz_container {
-    padding: 2px 16px;
+    float: left;
+    width: 25%;
 }
 
 .wz_card_submit {
@@ -36,17 +36,15 @@ html {
     margin-top: 5px;
 }
 
-img {
-    border-radius: 5px 5px 5px 5px;
+.apex_card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    float: left;
+    width: 25%;
 }
 
-.apex_card {
-    position: relative;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    width: 250px;
-    margin-bottom: 400px;
-    bottom: 253px;
-    left: 375px;
+.apex_card_submit {
+    width: 60px;
+    margin-top: 5px;
 }
 
 .apex_card:hover {
@@ -54,7 +52,88 @@ img {
 }
 
 .apex_container {
-    position: absolute;
-    padding: 2px 16px;
+    height: 191px;
+    background-color:green;
+    padding-top:20px;
+    padding-left:15px;
+    padding-right:15px;
 }
 
+.fortnite_card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    float: right;
+    width: 25%;
+}
+
+.fortnite_card_submit {
+    width: 60px;
+    margin-top: 5px;
+}
+
+.fortnite_card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.fortnite_container {
+    height: 191px;
+    background-color:green;
+    padding-top:20px;
+    padding-left:15px;
+    padding-right:15px;
+}
+
+#form {
+    width: 300px;
+    margin: 20vh auto 0 auto;
+    padding: 20px;
+    background-color: whitesmoke;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+#form h1 {
+    color: #0f2027;
+    text-align: center;
+}
+
+#form button {
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%;
+    color: white;
+    background-color: rgb(41, 57, 194);
+    border: none;
+    border-radius: 4px;
+}
+
+.input-control {
+    display: flex;
+    flex-direction: column;    
+}
+
+.input-control input {
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    font-size: 12px;
+    padding: 10px;
+    width: 90%;
+}
+
+.input-control input:focus {
+    outline: 0;
+}
+
+.input-control.success input {
+    border-color: #09c372;
+}
+
+.input-control.error input {
+    border-color: #ff3860;
+}
+
+.input-control .error {
+    color: #ff3860;
+    font-size: 9px;
+    height: 13px;
+}

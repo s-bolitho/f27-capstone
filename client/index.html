@@ -3,41 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <title>Document</title>
 </head>
 
 <body>
-    <header><input type="image" src="https://www.svgrepo.com/show/147593/home-button.svg" name="home-button" class="btTxt_submit" id="home_btn" />
-    <input type="image" src="http://cdn.onlinewebfonts.com/svg/img_364496.png" name="profile_button" class="profile_btn"/></header>
-    <div class="wz_card">
-        <img src="https://www.callofduty.com/content/dam/atvi/callofduty/cod-touchui/blog/hero/mw-wz/WZ-Season-Three-Announce-TOUT.jpg" alt="warzone_card" style="width: 100%;">
-        <div class="wz_container">
-            <form action="">
-                <label for="kills">Kills:</label><br>
-                <input type="text" name="kills" id="kills">
-                <br>
-                <label for="deaths">Deaths:</label><br>
-                <input type="text" name="deaths" id="deaths">
-                <br>
-                <input type="submit" class="wz_card_submit" value="Submit">
-            </form>
-        </div>  
+    <header><a href=""><input type="image" src="https://www.svgrepo.com/show/147593/home-button.svg" name="home-button" class="btTxt_submit" id="home_btn"/></a>
+    <a href=""><input type="image" src="http://cdn.onlinewebfonts.com/svg/img_364496.png" name="profile_button" class="profile_btn"/></header></a>
+    <div class="cards">
+        <div class="wz_card">
+            <img src="https://www.callofduty.com/content/dam/atvi/callofduty/cod-touchui/blog/hero/mw-wz/WZ-Season-Three-Announce-TOUT.jpg" alt="warzone_card" style="width: 100%;">
+            <div class="wz_container">
+                <form action="">
+                    <label for="kills">Kills:</label><br>
+                    <input type="text" name="kills" id="kills" class="wz_kills">
+                    <br>
+                    <label for="deaths">Deaths:</label><br>
+                    <input type="text" name="deaths" id="deaths" class="wz_deaths">
+                    <br>
+                    <button>Submit</button>
+                </form>
+            </div>  
+        </div>
+        <div class="apex_card">
+            <img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/apex-featured-image-16x9.jpg.adapt.crop16x9.1023w.jpg" alt="apex_card_img" style="width: 100%;">
+            <div class="apex_container">
+                <form action="">
+                    <label for="kills">Kills:</label><br>
+                    <input type="text" name="kills" id="kills" class="apex_kills">
+                    <br>
+                    <label for="deaths">Deaths:</label><br>
+                    <input type="text" name="deaths" id="deaths" class="apex_deaths">
+                    <br>
+                    <input type="submit" class="apex_card_submit" value="Submit">
+                </form>
+            </div>            
+        </div>
+        <div class="fortnite_card">
+            <img src="https://cdn2.unrealengine.com/21br-metaimage-lineup-1920x1080-44acd5f27136.jpg" alt="fortnite_card_img" style="width: 100%;">
+            <div class="fortnite_container">
+                <form action="">
+                    <label for="kills">Kills:</label><br>
+                    <input type="text" name="kills" id="kills" class="fortnite_kills">
+                    <br>
+                    <label for="deaths">Deaths:</label><br>
+                    <input type="text" name="deaths" id="deaths" class="fortnite_deaths">
+                    <br>
+                    <input type="submit" class="fortnite_card_submit" value="Submit">
+                </form>
+            </div>            
+        </div> 
     </div>
-    <div class="apex_card">
-        <img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/apex-featured-image-16x9.jpg.adapt.crop16x9.1023w.jpg" alt="apex_card_img" style="width: 100%;">
-        <div class="apex_container">
-            <form action="">
-                <label for="kills">Kills:</label><br>
-                <input type="text" name="kills" id="kills">
-                <br>
-                <label for="deaths">Deaths:</label><br>
-                <input type="text" name="deaths" id="deaths">
-                <br>
-                <input type="submit" class="wz_card_submit" value="Submit">
-            </form>
-        </div>            
-    </div>  
+    <script src="index.js"></script>
 </body>
 </html>
