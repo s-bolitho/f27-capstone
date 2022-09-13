@@ -1,15 +1,35 @@
-const cors = require("cors")
-
 const form = document.getElementById('form')
 const username = document.getElementById('username')
 const email = document.getElementById('email')
 const password = document.getElementById('password')
 const password2 = document.getElementById('password2')
 
-form.addEventListener('submit', () => {
-    cors.preventDefault();
+const baseURL = 'http://localhost:4004'
 
-    validateInputs();
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+   let body = {
+    username: username,
+    email: email,
+    password: password
+   }
+// let body = {
+//     username,
+//     email,
+//     password
+//    }
+
+   //remove base url for hosting
+   //.then takes in callback which is response from server that contains data that we pass it and what do I want to do with the data
+    if (validateInputs()) {
+        axios.post(`${baseURL}/register`, body).then(res => {
+            createUser(res.data)
+        }).catch(err => {
+            console.log(err)
+            alert('Your request did not work')
+        })
+    } 
 });
 
 const setError = (element, message) => {
@@ -21,7 +41,7 @@ const setError = (element, message) => {
     inputControl.classList.remove('success');
 }
 
-const setSuccess = element => {
+const setSuccess = (element) => {
     const inputControl = element.parentElement;
     const errorDisplay = inputControl.querySelector('.error');
 
@@ -30,45 +50,22 @@ const setSuccess = element => {
     inputControl.classList.remove('error');
 }
 
-const isValidEmail = () => {
-    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
-}
-
 const validateInputs = () => {
     const usernameValue = username.value.trim();
     const emailValue = email.value.trim();
     const passwordValue = password.value.trim();
     const password2Value = password2.value.trim();
 
-    if(usernameValue === '') {
-        setError(username, 'Username is required')
-    } else {
-        setSuccess(username);
-    }
-
-    if(emailValue === '') {
-        setError(email, 'Email is required');
-    } else if (!isValidEmail(emailValue)) {
-        setError(email, 'Provide a valid email address')
-    } else {
-        setSuccess(email);
-    }
-
-    if(passwordValue === '') {
-        setError(password, 'Password is required');
-    } else if (passwordValue.length < 8) {
+    if(passwordValue.length < 8) {
         setError(password, 'Password must be at least 8 characters long')
-    } else {
-        setSuccess(password);
+        return false
     }
 
-    if(password2Value === '') {
-        setError(password2, 'Please confirm your password');
-    } else if(password2Value !== passwordValue) {
+    if(password2Value !== passwordValue) {
         setError(password2, 'Passwords do not match');
-    } else {
-        setSuccess(password2);
-    }
+        return false
+    } 
+    setSuccess(password2);
+    return true
 }
 

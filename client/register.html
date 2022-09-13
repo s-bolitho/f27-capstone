@@ -4,36 +4,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>KD Calculator</title>
     <link rel="stylesheet" href="index.css">
-    <script defer src="index.js"></script>
 </head>
 <body>
-    <div class="container">
-        <form id="form" action="/">
-            <h1>Registration</h1>
-            <div class="input-control">
-                <label for="username">Username</label>
-                <input id="username" name="username" type="text">
-                <div class="error"></div>
-            </div>
-            <div class="input-control">
-                <label for="email">Email</label>
-                <input id="email" name="username" type="text">
-                <div class="error"></div>
-            </div>
-            <div class="input-control">
-                <label for="password">Password</label>
-                <input id="password" name="password" type="password">
-                <div class="error"></div>
-            </div>
-            <div class="input-control">
-                <label for="password">Confirm password</label>
-                <input type="password" name="password2" id="password2">
-                <div class="error"></div>
-            </div>
-            <button type="submit">Sign up</button>
-        </form>
-    </div>
+    <header>
+    </header>
+    <main>
+
+    <form id="login-form">
+        <h1>Log In</h1>
+        <input 
+            type='text'
+            id="login-username"
+            placeholder="Username"/>
+        <input 
+            type='password'
+            id="login-password"
+            placeholder='Password'/>
+        <button>Sign In</button>
+    </form>
+    <form id="register-form">
+      <h1>Register</h1>
+      <input 
+          type='text'
+          id="register-username"
+          placeholder="Username"/>
+      <input 
+          type='text'
+          id="register-email"
+          placeholder='Email'/>
+      <input 
+          type='text'
+          id="register-firstName"
+          placeholder='First Name'/>
+      <input 
+          type='text'
+          id="register-lastName"
+          placeholder='Last Name'/>
+      <input 
+          type='password'
+          id="register-password"
+          placeholder='Password'/>
+      <input 
+          type='password'
+          id="register-password-2"
+          placeholder='Confirm Password'/>
+      <button>Register</button>
+  </form>
+
+    <section id="user-info"></section>
+
+    </main>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
